@@ -3,7 +3,8 @@ NAME =		codexion
 SRC_DIR = 	./
 SRC = 		main.c \
 			parsing.c \
-			utils.c
+			utils.c \
+			time_utils.c
 
 HD = $(SRC_DIR)codexion.h
 

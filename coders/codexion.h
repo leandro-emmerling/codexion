@@ -6,7 +6,7 @@
 /*   By: lemmerli <lemmerli@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 13:28:02 by lemmerli          #+#    #+#             */
-/*   Updated: 2026/11/12 19:41:29 by lemmerli         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:35:17 by lemmerli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string.h>
 # include <pthread.h>
 # include <limits.h>
+# include <sys/time.h>
+# include <unistd.h>
 
 typedef enum e_scheduler
 {
@@ -36,7 +38,9 @@ typedef struct s_args
 	t_scheduler	scheduler;
 }	t_args;
 
-int	print_error(char *s);
-int	parsing(int argc, char **argv, t_args *args);
+int			print_error(char *s);
+int			parsing(int argc, char **argv, t_args *args);
+long long	get_time_ms(void);
+void		sleep_in_steps(long long dur);
 
 #endif
